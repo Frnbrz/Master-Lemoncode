@@ -119,3 +119,5 @@ YouTube utiliza √≠conos y botones de formas simples y reconocibles, como el bot√
 [Enlace al prototipo a bajo nivel](https://excalidraw.com/#json=3wu6uiHNNQaM4gsFirStl,-GRfMka08aoc7VIwOrlgCA)
 
 ![alt text](image-7.png)
+
+![alt text](image-8.png)
