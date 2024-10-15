@@ -68,14 +68,118 @@ const films = [
     duration: 148,
     genre: ['Action', 'Adventure', 'Science Fiction'],
     image: 'https://image.tmdb.org/t/p/w1280/ljsZTbVsrQSqZgWeep2B1QiDKuh.jpg'
-  }
+  },
+  {
+    id: 11,
+    title: 'The Lord of the Rings: The Two Towers',
+    duration: 179,
+    genre: ['Adventure', 'Fantasy', 'Action'],
+    image: 'https://image.tmdb.org/t/p/original/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg'
+  },
+  {
+    id: 12,
+    title: 'The Matrix',
+    duration: 136,
+    genre: ['Action', 'Science Fiction'],
+    image: 'https://image.tmdb.org/t/p/w1280/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg'
+  },
+  {
+    id: 13,
+    title: 'Inception',
+    duration: 148,
+    genre: ['Action', 'Adventure', 'Science Fiction'],
+    image: 'https://image.tmdb.org/t/p/w1280/ljsZTbVsrQSqZgWeep2B1QiDKuh.jpg'
+  },
+  {
+    id: 14,
+    title: 'The Lord of the Rings: The Two Towers',
+    duration: 179,
+    genre: ['Adventure', 'Fantasy', 'Action'],
+    image: 'https://image.tmdb.org/t/p/original/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg'
+  },
+  {
+    id: 15,
+    title: 'The Matrix',
+    duration: 136,
+    genre: ['Action', 'Science Fiction'],
+    image: 'https://image.tmdb.org/t/p/w1280/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg'
+  },
+  {
+    id: 16,
+    title: 'Inception',
+    duration: 148,
+    genre: ['Action', 'Adventure', 'Science Fiction'],
+    image: 'https://image.tmdb.org/t/p/w1280/ljsZTbVsrQSqZgWeep2B1QiDKuh.jpg'
+  },
+  {
+    id: 17,
+    title: 'The Lord of the Rings: The Two Towers',
+    duration: 179,
+    genre: ['Adventure', 'Fantasy', 'Action'],
+    image: 'https://image.tmdb.org/t/p/original/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg'
+  },
+  {
+    id: 18,
+    title: 'The Matrix',
+    duration: 136,
+    genre: ['Action', 'Science Fiction'],
+    image: 'https://image.tmdb.org/t/p/w1280/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg'
+  },
+  {
+    id: 19,
+    title: 'Inception',
+    duration: 148,
+    genre: ['Action', 'Adventure', 'Science Fiction'],
+    image: 'https://image.tmdb.org/t/p/w1280/ljsZTbVsrQSqZgWeep2B1QiDKuh.jpg'
+  },
+  {
+    id: 20,
+    title: 'The Lord of the Rings: The Two Towers',
+    duration: 179,
+    genre: ['Adventure', 'Fantasy', 'Action'],
+    image: 'https://image.tmdb.org/t/p/original/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg'
+  },
+  {
+    id: 21,
+    title: 'The Matrix',
+    duration: 136,
+    genre: ['Action', 'Science Fiction'],
+    image: 'https://image.tmdb.org/t/p/w1280/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg'
+  },
+  {
+    id: 22,
+    title: 'Inception',
+    duration: 148,
+    genre: ['Action', 'Adventure', 'Science Fiction'],
+    image: 'https://image.tmdb.org/t/p/w1280/ljsZTbVsrQSqZgWeep2B1QiDKuh.jpg'
+  },
+  {
+    id: 23,
+    title: 'The Lord of the Rings: The Two Towers',
+    duration: 179,
+    genre: ['Adventure', 'Fantasy', 'Action'],
+    image: 'https://image.tmdb.org/t/p/original/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg'
+  },
+  {
+    id: 24,
+    title: 'The Matrix',
+    duration: 136,
+    genre: ['Action', 'Science Fiction'],
+    image: 'https://image.tmdb.org/t/p/w1280/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg'
+  },
 ]
 
+const topFiveFilms = films.slice(0, 5)
 
-document.querySelector('.cards_container').innerHTML = films.map(film => `
+const comedyFilm = films.filter(film => film.genre.includes('Comedy'))
+
+const dramaFilm = films.filter(film => film.genre.includes('Drama'))
+
+
+document.querySelector('.cards_container_top').innerHTML = topFiveFilms.map(film => `
   <div class="cards">
    <span class="card__number">${film.id}</span>
-    <div class="card__film">
+    <div class="card_top__film">
       <img class="film"  src="${film.image}" alt="${film.title}">
       <div class="card__film__info">
         <h2>${film.title}</h2>
@@ -84,4 +188,27 @@ document.querySelector('.cards_container').innerHTML = films.map(film => `
       </div>
     </div>
   </div>
+`).join('')
+
+
+document.querySelector('.cards_comedy').innerHTML = comedyFilm.map(film => `
+    <div class="card__film">
+      <img class="film"  src="${film.image}" alt="${film.title}">
+      <div class="card__film__info">
+        <h2>${film.title}</h2>
+        <p>${film.duration} minutes</p>
+        <p>${film.genre.join(', ')}</p>
+      </div>
+    </div>
+`).join('')
+
+document.querySelector('.cards_drama').innerHTML = dramaFilm.map(film => `
+    <div class="card__film">
+      <img class="film"  src="${film.image}" alt="${film.title}">
+      <div class="card__film__info">
+        <h2>${film.title}</h2>
+        <p>${film.duration} minutes</p>
+        <p>${film.genre.join(', ')}</p>
+      </div>
+    </div>
 `).join('')
