@@ -13,6 +13,11 @@ body {
   color-scheme: dark;
   background-color: var(--background-color);
   color: var(--primary-color);
+  overflow-x: hidden;
+}
+
+main {
+  margin: 1rem;
 }
 
 .logo {
@@ -40,6 +45,17 @@ header {
   }
 }
 
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: var(--secondary-color);
+  }
+}
+
 .navBar ul {
   display: flex;
 
@@ -47,37 +63,43 @@ header {
     list-style: none;
     margin: 0 0.5rem;
   }
-
-  a {
-    text-decoration: none;
-    color: var(--primary-color);
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    transition: background-color 0.3s;
-    &:hover {
-      background-color: var(--secondary-color);
-    }
-  }
 }
 
-.cards_container {
+section h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0.5rem;
+}
+
+.cards_container_top {
   display: flex;
   flex-direction: row;
   gap: 2rem;
+}
+
+.cards_comedy,
+.cards_drama {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
 }
 
 .cards {
   display: flex;
   align-items: center;
   flex-direction: row;
-  width: 18rem;
-  height: 13rem;
 }
+.card_top__film {
+  display: flex;
+  flex-direction: column;
+  height: 11rem;
+  width: 9rem;
+}
+
 .card__film {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
+  position: relative;
 }
 
 .card__film__info {
@@ -89,6 +111,12 @@ header {
   width: 100%;
 }
 
+.card_top__film:hover .card__film__info {
+  display: inline;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .card__film:hover .card__film__info {
   display: inline;
   position: absolute;
@@ -96,8 +124,11 @@ header {
 }
 
 .card__film img {
-  height: 85%;
   object-fit: cover;
+  object-position: center;
+  border-radius: 0.1rem;
+  height: 11rem;
+  width: 20rem;
 }
 
 .card__number {
@@ -107,4 +138,12 @@ header {
   -webkit-text-fill-color: #000;
   margin-right: -2rem;
   margin-bottom: 1.4rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  gap: 1rem;
 }
