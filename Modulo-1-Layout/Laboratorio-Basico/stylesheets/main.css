@@ -112,21 +112,20 @@ body {
   color-scheme: light dark;
 }
 
-.container--1 {
+.container-1 {
   display: grid;
   grid-template-columns: repeat(4, 100px) 1fr repeat(4, 100px);
   grid-auto-rows: 100px;
   gap: 0.5rem;
   min-width: 100px;
 }
-
-.box {
+.container-1__box {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.container--2 {
+.container-2 {
   display: grid;
   grid-template-columns: repeat(4, 100px) 1fr repeat(4, 100px);
   grid-auto-rows: 100px;
