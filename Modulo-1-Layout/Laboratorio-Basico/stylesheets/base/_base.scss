@@ -7,24 +7,26 @@ body {
 
 // Ejercicio 1
 
-.container--1 {
+.container-1 {
   display: grid;
   grid-template-columns: repeat(4, 100px) 1fr repeat(4, 100px);
   grid-auto-rows: 100px;
   gap: 0.5rem;
   min-width: 100px;
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
-.box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 
 // Ejercicio 2
 
-.container--2 {
+.container-2 {
   display: grid;
   grid-template-columns: repeat(4, 100px) 1fr repeat(4, 100px);
   grid-auto-rows: 100px;
