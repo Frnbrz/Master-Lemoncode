@@ -2,31 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="sass/style.css" />
+    <link rel="stylesheet" href="sass/main.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <div class="header-logo">
+    <header class="header">
+      <div class="header__logo">
         <img src="assets/logo.png" />
-        <div class="platform-title">Warner Live</div>
+        <div class="header__title">Warner Live</div>
       </div>
-      <div class="header-buttons">
-        <div>Inicio</div>
-        <div>Buscar</div>
+      <div class="header__buttons">
+        <a href="#" class="header__button">Inicio</a>
+        <a href="#" class="header__button">Buscar</a>
       </div>
     </header>
     <main>
-      <div class="section-title">
-        Los <span id="top-text"></span> más populares hoy
+      <div class="section">
+        Los <span class="section__text"></span> más populares hoy
       </div>
-      <section class="top">
-        <div class="top-item"><img src="assets/top/5.jpg" /></div>
-        <div class="top-item"><img src="assets/top/4.jpg" /></div>
-        <div class="top-item"><img src="assets/top/3.jpg" /></div>
-        <div class="top-item"><img src="assets/top/2.jpg" /></div>
-        <div class="top-item"><img src="assets/top/1.jpg" /></div>
+      <section class="section__top">
+        <div class="section__item"><img src="assets/top/5.jpg" /></div>
+        <div class="section__item"><img src="assets/top/4.jpg" /></div>
+        <div class="section__item"><img src="assets/top/3.jpg" /></div>
+        <div class="section__item"><img src="assets/top/2.jpg" /></div>
+        <div class="section__item"><img src="assets/top/1.jpg" /></div>
       </section>
       <div class="section-title">Comedias</div>
       <section class="first">
@@ -48,5 +48,17 @@
       </section>
     </main>
     <footer></footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const sectionTopItems = document.querySelectorAll(
+          '.section__top .section__item',
+        ).length
+        document.documentElement.style.setProperty(
+          '--section-item-count',
+          sectionTopItems,
+        )
+      })
+    </script>
   </body>
 </html>

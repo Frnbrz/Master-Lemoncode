@@ -1,23 +1,164 @@
-  @charset "UTF-8";
+  // @charset "UTF-8";
 
-  // 1. Vendors
-  @use 'vendors/normalize';
+  // // 1. Vendors
+  // @use 'vendors/normalize';
 
-  // 2. Base stuff
-  @use 'base/base';
-  @use 'base/fonts';
-  @use 'base/helpers';
-  @use 'base/typography';
+  // // 2. Base stuff
+  // @use 'base/base';
+  // @use 'base/fonts';
+  // @use 'base/helpers';
+  // @use 'base/typography';
 
-  // 3. Layout-related sections
-  @use 'layout/footer';
-  @use 'layout/header';
+  // // 3. Layout-related sections
+  // @use 'layout/footer';
+  // @use 'layout/header';
 
-  // 4. Components
-  @use 'components/button';
+  // // 4. Components
+  // @use 'components/button';
 
-  // 5. Pages
-  @use 'pages/home';
+  // // 5. Pages
+  // @use 'pages/home';
 
-  // 6. Themes
-  @use 'themes/default';
+  // // 6. Themes
+  // @use 'themes/default';
+
+
+
+  // LABORATORIO AVANZADO
+
+
+
+
+  /// Variables
+
+
+  /// Fonts
+  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
+
+
+  /// Regular font family
+  /// @type List
+  $text-font-stack: 'Jost', sans-serif !default;
+
+
+
+
+  /// Text color
+  $text-color: #f0f0f0 !default;
+
+  /// Background color
+  $background-color: #141414 !default;
+
+  /// Button hover color
+  $button-hover-color: #ffffff !default;
+
+  /// Button hover text color
+  $button-hover-text: #0033a1a8 !default;
+
+
+  /// BASE
+  html {
+    box-sizing: border-box;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  body {
+    background-color: $background-color;
+    color: $text-color;
+    font: normal 125% / 1.4 $text-font-stack;
+  }
+
+  /// NORMALIZE
+  /**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+  html {
+    line-height: 1.15;
+    /* 1 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
+  }
+
+  /* Sections
+   ========================================================================== */
+
+  /**
+ * Remove the margin in all browsers.
+ */
+
+  body {
+    margin: 0;
+  }
+
+  /**
+ * Render the `main` element consistently in IE.
+ */
+
+  main {
+    display: block;
+  }
+
+  /// COMPONENTS
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+
+    &__logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &__buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__button {
+      border: none;
+      border-radius: 0.2rem;
+      color: $text-color;
+      font: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+
+      &:hover {
+        background-color: $button-hover-color;
+        color: $button-hover-text;
+      }
+    }
+  }
+
+  .section {
+    padding: 2rem;
+
+    &__text::after {
+      content: var(--section-item-count);
+      color: $text-color;
+    }
+
+    &__item {
+      counter-reset: top-item;
+    }
+
+    &__item {
+      counter-increment: top-item;
+    }
+  }

@@ -1,28 +1,23 @@
-# Arquitectura Sass (Mejorada)
+# Laboratorio Avanzado
 
-## 1. Componentización y Escalabilidad
+Una conocida casa cinematográfica quiere crear su propia plataforma on-line
+para servir sus producciones, a la que van a llamar WARNER LIVE.
+Nos han solicitado una prueba de maquetación de un primer diseño,
+del resultado de la prueba dependerá pasar a la siguiente fase de selección.
 
-- **Principio**: Estilos divididos en componentes reutilizables y desacoplados.
-- **Organización en archivos**: Cada componente tiene su propio archivo parcial en `components/`.
+Diseño Desktop (ancho 1280px mínimo)
 
-## 2. Estructura 7-1
+Diseño Reponsive
 
-- **Carpetas**:
-  - **Base**: Reglas iniciales (reset, tipografía).
-  - **Layout**: Estructura global (header, footer).
-  - **Components**: Elementos específicos (botones, sliders).
-  - **Pages**: Estilos específicos de cada página.
-  - **Themes**: Temas alternativos de estilo.
-  - **Abstracts**: Funciones, mixins, y variables.
-  - **Vendors**: Librerías de terceros.
+Diseño Mobile/Tablet (hasta 1280px)
 
-## 3. Breakpoints Responsivos
+- Fuente utilizada: Jost
+  (https://fonts.google.com/specimen/Jost?preview.text=warner+live&preview.text_type=custom)
+- Color de fondo de la plataforma: #141414
+- Se adjunta carpeta de trabajo con la base de HTML (puede ser modificado al gusto) y las imágenes, carátulas
+  y logo, que se pueden modificar/añadir.
+- Se aporta los requisitos de diseño base, con libertad de creatividad.
 
-- **Principio**: Nombres de breakpoints descriptivos (ej. `medium`, `large`) en lugar de depender del dispositivo.
-- **Uso de mixins**: Simplifica aplicar breakpoints.
+## Style
 
-## 4. "Shame" Styles
-
-- **Archivo `_shame.scss`**: Contiene estilos temporales o soluciones rápidas.
-
-Para más detalles, consulta la [guía de Sass](https://sass-guidelin.es/#architecture).
+Para generar

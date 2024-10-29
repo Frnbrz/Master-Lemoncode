@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #141414;
+  color: #f0f0f0;
+  font: normal 125%/1.4 "Jost", sans-serif;
+}
+
+/**
+* 1. Correct the line height in all browsers.
+* 2. Prevent adjustments of font size after orientation changes in iOS.
+*/
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+ ========================================================================== */
+/**
+* Remove the margin in all browsers.
+*/
+body {
+  margin: 0;
+}
+
+/**
+* Render the `main` element consistently in IE.
+*/
+main {
+  display: block;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+.header__logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.header__buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+.header__title {
+  font-size: 1.5rem;
+}
+.header__button {
+  border: none;
+  border-radius: 0.2rem;
+  color: #f0f0f0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+.header__button:hover {
+  background-color: #ffffff;
+  color: rgba(0, 51, 161, 0.6588235294);
+}
+
+.section {
+  padding: 2rem;
+}
+.section__text::after {
+  content: var(--section-item-count);
+  color: #f0f0f0;
+}
+.section__item {
+  counter-reset: top-item;
+}
+.section__item {
+  counter-increment: top-item;
+}/*# sourceMappingURL=main.css.map */
