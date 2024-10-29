@@ -42,6 +42,10 @@ main {
   display: block;
 }
 
+main {
+  padding: 1.5rem;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -76,16 +80,67 @@ main {
   color: rgba(0, 51, 161, 0.6588235294);
 }
 
-.section {
-  padding: 2rem;
+.section__top {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
 }
-.section__text::after {
-  content: var(--section-item-count);
-  color: #f0f0f0;
+@media screen and (max-width: 370px) {
+  .section__top {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .section__top {
+    flex-direction: row-reverse;
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .section__top {
+    flex-direction: row-reverse;
+    gap: 1rem;
+  }
 }
 .section__item {
-  counter-reset: top-item;
+  max-width: 250px;
 }
-.section__item {
-  counter-increment: top-item;
+@media screen and (max-width: 1280px) {
+  .section__text::after {
+    content: "3";
+  }
+}
+@media screen and (min-width: 1280px) {
+  .section__text::after {
+    content: "5";
+  }
+}
+
+.first {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.first__item > img {
+  width: 250px;
+}
+.first__item:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+.second {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.second__item > img {
+  width: 250px;
+}
+.second__item:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  animation: name duration timing-function delay iteration-count direction fill-mode;
 }/*# sourceMappingURL=main.css.map */
