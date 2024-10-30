@@ -18,6 +18,14 @@ Diseño Mobile/Tablet (hasta 1280px)
   y logo, que se pueden modificar/añadir.
 - Se aporta los requisitos de diseño base, con libertad de creatividad.
 
-## Style
+## Cambios
 
-Para generar
+Cambios realizados en la plantilla html dada.
+
+### HTML
+
+Por accesibilidad y para mostrar los elementos tal y como estan en el lado visual he cambiado los elementos en el html ordenando los item de mayor a menor en la section top.
+
+## CSS
+
+Utilizado SASS para realizar la maquetacion.
