@@ -1,12 +1,4 @@
-body {
-  margin: 0;
-  padding: 0;
-  color-scheme: light dark;
-
-}
-
 // Ejercicio 1
-
 .container-1 {
   display: grid;
   grid-template-columns: repeat(4, 100px) 1fr repeat(4, 100px);
@@ -21,11 +13,7 @@ body {
   }
 }
 
-
-
-
 // Ejercicio 2
-
 .container-2 {
   display: grid;
   grid-template-columns: repeat(4, 100px) 1fr repeat(4, 100px);

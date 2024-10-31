@@ -27,3 +27,32 @@ $shades: 1, 2, 3, 4;
 @include generate-shades('red', $base-red);
 @include generate-shades('blue', $base-blue);
 @include generate-shades('green', $base-green);
+
+$body-font-family: 'Arial', sans-serif;
+$body-font-weight: 400;
+$body-font-size: 16px;
+$body-text-color: #333;
+$body-background-color: #f9f9f9;
+$body-line-height: 1.5;
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+body {
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
+  font-size: $body-font-size;
+  color: $body-text-color;
+  background-color: $body-background-color;
+  line-height: $body-line-height;
+}
