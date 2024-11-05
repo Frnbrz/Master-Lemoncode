@@ -106,10 +106,25 @@
   background-color: #2ecc71;
 }
 
-body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
   margin: 0;
   padding: 0;
-  color-scheme: light dark;
+  font: inherit;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  line-height: 1.5;
 }
 
 .container-1 {

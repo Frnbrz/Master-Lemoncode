@@ -92,32 +92,41 @@ main {
   overflow: hidden;
   gap: 1rem;
 }
-@media (max-width: 320px) {
-  .section__top:nth-last-child(-n+2) {
+@media only screen and (min-width: 320px) {
+  .section__top {
+    flex-direction: column;
+  }
+  .section__top > div:nth-last-child(-n+2) {
     display: none;
   }
 }
-@media (min-width: 320px) {
-  .section__top:nth-last-child(-n+3) {
+@media only screen and (min-width: 768px) {
+  .section__top {
+    flex-direction: row;
+  }
+  .section__top > div:nth-last-child(-n+2) {
     display: none;
   }
 }
-@media (min-width: 768px) {
-  .section__top:nth-last-child(-n+4) {
-    display: none;
+@media only screen and (min-width: 1280px) {
+  .section__top {
+    flex-direction: row;
+  }
+  .section__top > div:nth-last-child(-n+2) {
+    display: block;
   }
 }
-@media (min-width: 320px) {
+@media only screen and (min-width: 320px) {
   .section__text::after {
     content: "3";
   }
 }
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .section__text::after {
     content: "3";
   }
 }
-@media (min-width: 1280px) {
+@media only screen and (min-width: 1280px) {
   .section__text::after {
     content: "5";
   }
