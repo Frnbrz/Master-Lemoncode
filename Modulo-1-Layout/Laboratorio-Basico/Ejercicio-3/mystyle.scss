@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  color-scheme: light dark;
+}
+
+// Ejercicio 1
+
+
+
+// Palette
+
+$base-red: #e74c3c;
+$base-blue: #3498db;
+$base-green: #2ecc71;
+
+$shades: 1, 2, 3, 4;
+
+
+// Mixin para generar las sombras de un color base, primer parametro es el nombre del color y el segundo el color base
+@mixin generate-shades($color-name, $color-base) {
+  @each $shade in $shades {
+
+    .#{$color-name}-darken-#{$shade} {
+      background-color: darken($color-base, $shade * 10%);
+    }
+
+    .#{$color-name}-lighten-#{$shade} {
+      background-color: lighten($color-base, $shade * 10%);
+    }
+  }
+
+  .#{$color-name}-base-color {
+    background-color: $color-base;
+  }
+}
+
+// Se utiliza el mixin para generar las sombras de los colores base
+@include generate-shades('red', $base-red);
+@include generate-shades('blue', $base-blue);
+@include generate-shades('green', $base-green);
+
+
+// Container 1
+
+.container-1 {
+  display: grid;
+  grid-template-columns: repeat(4, 100px) minmax(100px, 1fr) repeat(4, 100px);
+  grid-auto-rows: 100px;
+  gap: 0.5rem;
+  min-width: 100px;
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
