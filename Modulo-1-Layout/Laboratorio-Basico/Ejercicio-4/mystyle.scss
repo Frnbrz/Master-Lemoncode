@@ -1,58 +1,94 @@
 body {
   margin: 0;
   padding: 0;
-  color-scheme: light dark;
 }
 
-// Ejercicio 1
+// Ejercicio 5
 
 
+// <div class="card">
+//       <header>
+//         <img src="https://placehold.co/600x400" alt="" />
+//       </header>
+//       <h1>Title</h1>
+//       <p>
+//         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat
+//         numquam, suscipit sint aspernatur, laboriosam consequuntur saepe
+//         recusandae necessitatibus eaque ea dolore iure voluptas modi quidem,
+//         amet nostrum.
+//       </p>
+//       <footer>
+//         <div><span>Publised:</span><time>March 20, 2020</time></div>
+//         <button>More info</button>
+//       </footer>
+//     </div>
 
-// Palette
+body {
+  font-family: Arial, sans-serif;
 
-$base-red: #e74c3c;
-$base-blue: #3498db;
-$base-green: #2ecc71;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d3d3d3;
+  height: 100vh;
+}
 
-$shades: 1, 2, 3, 4;
 
+.card {
+  border: 1px solid #000;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: 300px;
 
-// Mixin para generar las sombras de un color base, primer parametro es el nombre del color y el segundo el color base
-@mixin generate-shades($color-name, $color-base) {
-  @each $shade in $shades {
-
-    .#{$color-name}-darken-#{$shade} {
-      background-color: darken($color-base, $shade * 10%);
-    }
-
-    .#{$color-name}-lighten-#{$shade} {
-      background-color: lighten($color-base, $shade * 10%);
+  header {
+    img {
+      width: 100%;
     }
   }
 
-  .#{$color-name}-base-color {
-    background-color: $color-base;
+  h1 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    padding: 0.5rem;
   }
-}
 
-// Se utiliza el mixin para generar las sombras de los colores base
-@include generate-shades('red', $base-red);
-@include generate-shades('blue', $base-blue);
-@include generate-shades('green', $base-green);
+  p {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
 
-
-// Container 1
-
-.container-1 {
-  display: grid;
-  grid-template-columns: repeat(4, 100px) minmax(100px, 1fr) repeat(4, 100px);
-  grid-auto-rows: 100px;
-  gap: 0.5rem;
-  min-width: 100px;
-
-  &__box {
+  footer {
+    padding: 0.5rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+
+    div {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 0.5rem;
+
+
+
+      span {
+        font-weight: bold;
+      }
+
+      time {
+        font-size: 0.8rem;
+      }
+    }
+
+    button {
+      display: block;
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #0d8105;
+      color: #fff;
+      cursor: pointer;
+    }
   }
+
+
 }
