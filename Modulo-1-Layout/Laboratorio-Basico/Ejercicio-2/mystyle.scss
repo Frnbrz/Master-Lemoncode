@@ -1,13 +1,41 @@
+@use 'themes/theme2';
+
 body {
   margin: 0;
   padding: 0;
-  color-scheme: light dark;
 }
 
 // Ejercicio 2
 
-.container-2 {
+.container {
   display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+  margin: 0 auto;
   justify-content: space-around;
   gap: 1rem;
+}
+
+.theme__base {
+  @extend .base;
+}
+
+.theme__important {
+  @extend .important;
+}
+
+.theme__warning {
+  @extend .warning;
+}
+
+.font--principal {
+  @extend .principal;
+}
+
+.font--secondary {
+  @extend .secondary;
+}
+
+.box--shadow {
+  @extend .box-shadow;
 }
