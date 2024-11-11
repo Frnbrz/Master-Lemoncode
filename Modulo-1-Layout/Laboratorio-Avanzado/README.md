@@ -1,15 +1,3 @@
-# WORK IN PROGRESS
-
-## !TODO
-
-- Mejorar top 5 mejores peliculas:
-  - Tablet mostrar 3 elementos
-  - Mobile columna con 3 elementos
-- Peliculas Comedia y Drama
-  - Mejorar Hover
-  - Mejorar el layout para Desktop
-- Footer?
-
 # Laboratorio Avanzado
 
 Una conocida casa cinematográfica quiere crear su propia plataforma on-line
