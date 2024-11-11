@@ -1,0 +1,32 @@
+// Breakpoint
+
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1280px,
+);
+
+// Colors
+
+/// Text color
+$text-color: #f0f0f0 !default;
+
+/// Background color
+$background-color: #141414 !default;
+
+/// Button hover color
+$button-hover-color: #ffffff !default;
+
+/// Button hover text color
+$button-hover-text: #0033a1a8 !default;
+
+
+//Typography
+
+// Import the fonts
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
+
+
+/// @type List
+$body-font-family: 'Jost', sans-serif !default;

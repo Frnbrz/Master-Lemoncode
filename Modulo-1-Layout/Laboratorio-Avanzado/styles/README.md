@@ -18,14 +18,18 @@ SCSS mejora la **productividad**, **mantenibilidad** y **flexibilidad** en el de
 
 ## 2. Estructura 7-1
 
-- **Carpetas**:
-  - **Base**: Reglas iniciales (reset, tipografía).
-  - **Layout**: Estructura global (header, footer).
-  - **Components**: Elementos específicos (botones, sliders).
-  - **Pages**: Estilos específicos de cada página.
-  - **Themes**: Temas alternativos de estilo.
-  - **Abstracts**: Funciones, mixins, y variables.
-  - **Vendors**: Librerías de terceros.
+Basado en la guía de [Technoph1le](https://dev.to/technoph1le/a-modern-sass-folder-structure-330f), una estructura moderna de carpetas Sass puede incluir:
+
+- **abstracts**: Contiene funciones, mixins, y variables.
+- **base**: Reglas iniciales como reset y tipografía.
+- **components**: Estilos para componentes específicos como botones y sliders.
+- **layout**: Estilos para la estructura global como header y footer.
+- **pages**: Estilos específicos de cada página.
+- **themes**: Temas alternativos de estilo.
+- **vendors**: Librerías de terceros.
+- **utilities**: Clases utilitarias y helpers.
+
+Esta estructura permite una mejor organización y escalabilidad en proyectos grandes.
 
 ## 3. Breakpoints Responsivos
 
