@@ -31,6 +31,10 @@ Basado en la guía de [Technoph1le](https://dev.to/technoph1le/a-modern-sass-fol
 
 Esta estructura permite una mejor organización y escalabilidad en proyectos grandes.
 
+### Uso de @use y @forward
+
+En lugar de usar el método `@import` que ahora está obsoleto, se recomienda usar `@use` y `@forward` para importar archivos y carpetas en Sass.
+
 ## 3. Breakpoints Responsivos
 
 - **Principio**: Nombres de breakpoints descriptivos (ej. `medium`, `large`) en lugar de depender del dispositivo.
