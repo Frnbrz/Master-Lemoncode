@@ -1,24 +1,32 @@
 // Breakpoint
 
 $breakpoints: (
-  'small': 320px,
-  'medium': 768px,
-  'large': 1280px,
+  'small': (min-width: 320px),
+  'medium': (min-width: 768px),
+  'large': (min-width: 1280px),
 );
+
+
 
 // Colors
 
-/// Text color
-$text-color: #f0f0f0 !default;
+/// @type Color
+$body-text-color: #f0f0f0 !default;
 
-/// Background color
-$background-color: #141414 !default;
+/// @type Color
+$body-background-color: #141414 !default;
 
-/// Button hover color
+/// @type Color
 $button-hover-color: #ffffff !default;
 
-/// Button hover text color
+/// @type Color
 $button-hover-text: #0033a1a8 !default;
+
+// @type Color
+$link-color: #f4f4f4 !default;
+
+// @type Color
+$link-color-hover: #171818a8 !default;
 
 
 //Typography
@@ -27,6 +35,19 @@ $button-hover-text: #0033a1a8 !default;
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
 
 
-
 /// @type List
 $body-font-family: 'Jost', sans-serif !default;
+
+/// @type Number
+$body-font-weight: 400 !default;
+
+/// @type Number
+$body-font-size: 16px !default;
+
+/// @type Number
+$body-line-height: 1.5 !default;
+
+
+/// IMAGES WIDTHS
+$img-top-size: 225px;
+$img-item-size: 250px;

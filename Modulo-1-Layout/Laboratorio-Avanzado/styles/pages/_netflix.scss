@@ -1,0 +1,106 @@
+@use "../abstracts/" as *;
+
+.section {
+  &__top {
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    place-content: center;
+    gap: 1rem;
+
+    flex-direction: column;
+
+    &>div:nth-last-child(-n+2) {
+      display: none;
+    }
+
+    @include respond-to('small') {
+      flex-direction: column;
+
+      &>div:nth-last-child(-n+2) {
+        display: none;
+      }
+    }
+
+    @include respond-to('medium') {
+      flex-direction: row;
+
+      &>div:nth-last-child(-n+2) {
+        display: none;
+      }
+    }
+
+    @include respond-to('large') {
+      flex-direction: row;
+
+      &>div:nth-last-child(-n+2) {
+        display: block;
+      }
+    }
+  }
+
+  &__text::after {
+    content: '3';
+
+    @include respond-to('small') {
+      content: '3';
+    }
+
+    @include respond-to('medium') {
+      content: '3';
+    }
+
+    @include respond-to('large') {
+      content: '5';
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &>img {
+      width: $img-top-size;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
+
+/// Comedy and Drama sections mixin
+
+@mixin grid-container {
+  display: grid;
+  gap: 0.3rem;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  margin-inline: auto;
+  grid-column: 3 / 5;
+
+  &__item:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  &__item {
+    display: none;
+    width: 225px;
+    display: contents;
+  }
+
+  &__item>img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+/// COMEDY and DRAMA sections
+
+.first {
+  @include grid-container;
+}
+
+.second {
+  @include grid-container;
+}
