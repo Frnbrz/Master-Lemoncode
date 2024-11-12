@@ -1,48 +1,213 @@
-body {
+// Reset
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
   margin: 0;
   padding: 0;
-  color-scheme: light dark;
+  font: inherit;
 }
 
-// Ejercicio 1
-
-// Palette
-
-$base-red: #e74c3c;
-$base-blue: #3498db;
-$base-green: #2ecc71;
-
-$shades: 1, 2, 3, 4;
-
-// Mixin para generar las sombras de un color base, primer parametro es el nombre del color y el segundo el color base
-@mixin generate-shades($color-name, $color-base) {
-  @each $shade in $shades {
-
-    .#{$color-name}-darken-#{$shade} {
-      background-color: darken($color-base, $shade * 10%);
-    }
-
-    .#{$color-name}-lighten-#{$shade} {
-      background-color: lighten($color-base, $shade * 10%);
-    }
-  }
-
-  .#{$color-name}-base-color {
-    background-color: $color-base;
-  }
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
-// Se utiliza el mixin para generar las sombras de los colores base
-@include generate-shades('red', $base-red);
-@include generate-shades('blue', $base-blue);
-@include generate-shades('green', $base-green);
+// Variables
 
-// Container 1
+// Breakpoint
 
-.container-1 {
+$breakpoints: (
+  'small': (
+    min-width: 320px,
+  ),
+  'medium': (
+    min-width: 768px,
+  ),
+  'large': (
+    min-width: 1280px,
+  ),
+);
+
+// Colors
+
+$body-text-color: #333333 !default;
+$body-background-color: #f0f0f0 !default;
+$header-background-color: #cdde1c !default;
+$header-text-color: #fefcfb !default;
+$navbar-background-color: #393e06 !default;
+$navbar-title-color: #fafbec !default;
+$link-background-color: #f9fbe3 !default;
+$navbar-text-color: #1e2016 !default;
+$footer-background-color: #f9fbe3 !default;
+$footer-text-color: #343522 !default;
+$card-background-color: #ffffff !default;
+$card-text-color: #151515 !default;
+
+//Typography
+
+// Import the fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Serif&display=swap');
+
+//
+
+$body-font-family: 'Serif', sans-serif !default;
+$body-font-weight: 400 !default;
+$body-font-size: 16px !default;
+$body-line-height: 1.5 !default;
+
+// Base
+
+body {
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
+  font-size: $body-font-size;
+  color: $body-text-color;
+  background-color: $body-background-color;
+  line-height: $body-line-height;
+}
+
+// Container
+
+.container {
   display: grid;
-  grid-template-columns: repeat(4, 100px) minmax(100px, 1fr) repeat(4, 100px);
-  grid-auto-rows: 100px;
-  gap: 0.5rem;
-  min-width: 100px;
+  height: 100vh;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 100px auto 50px;
+  grid-template-areas:
+    'header header'
+    'navbar main'
+    'footer footer';
+  grid-gap: 0.2rem;
+  color: #004d40;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px auto auto 50px;
+    grid-template-areas:
+      'header'
+      'navbar'
+      'main'
+      'footer';
+  }
+}
+
+// Header
+
+header {
+  grid-area: header;
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: white;
+    color: $body-text-color;
+  }
+
+  .header--title {
+    color: $header-text-color;
+    background-color: $header-background-color;
+    padding: 1rem;
+    font-size: large;
+  }
+}
+
+main {
+  grid-area: main;
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+    padding: 1rem;
+
+    @media only screen and (max-width: 768px) {
+      padding: 1rem 0px;
+    }
+  }
+}
+
+nav {
+  grid-area: navbar;
+  background-color: $navbar-background-color;
+  color: $navbar-text-color;
+
+  ul {
+    padding: 0.6rem;
+    background-color: $link-background-color;
+    list-style: none;
+
+    @media only screen and (max-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 1rem;
+      background-color: $navbar-background-color;
+
+      li {
+        background-color: $link-background-color;
+        padding: 0.5rem 1.5rem;
+        min-width: 120px;
+        text-align: center;
+      }
+    }
+  }
+  .menu--title {
+    padding: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $navbar-title-color;
+
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+}
+
+footer {
+  grid-area: footer;
+  background-color: $footer-background-color;
+  color: $footer-text-color;
+  padding: 1rem;
+}
+
+// components
+
+// Card
+
+.card {
+  background-color: $card-background-color;
+  color: $card-text-color;
+  border: 1.5px solid black;
+  padding: 1rem;
+  border-radius: 0.2rem;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    border-radius: 50%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    border: 0px;
+  }
 }

@@ -23,10 +23,16 @@ Vamos a crear un Layoutpara una aplicación, que contendrá:
 
 Diseño Desktop (a partir de 768px)
 
+![alt text](image.png)
+
+![alt text](image-1.png)
+
 Al hacer scrollno perdemos
 la barra de navegación
 
 Diseño Mobile/Tablet (hasta 768px de ancho)
+
+![alt text](image-2.png)
 
 ```
 Al hacer scrollno
@@ -42,10 +48,6 @@ Consideraciones
     - Barra superior con input de búsqueda y nombre de usuario
     - Título del menú
   - Cambiar menú a la parte superior, bajo el header.
-  - Cambiarlaorganizacióndelcontenido principal paravisualizarlosinproblemas
-    - Libertaddediseñoycreatividad:
-      - Tema
-      - Contenido
-      - Breakpoints
-      - Colores
-      - Etc...
+  - Cambiarlaorganizacióndelcontenido principal paravisualizarlosinproblemas - Libertaddediseñoycreatividad: - Tema - Contenido - Breakpoints - Colores - Etc...
+
+![alt text](image-3.png)
