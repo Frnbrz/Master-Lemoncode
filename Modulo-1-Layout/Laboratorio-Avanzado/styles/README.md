@@ -1,3 +1,24 @@
+# Uso de SCSS en el Proyecto
+
+Este proyecto utiliza SCSS para mejorar la **productividad**, **mantenibilidad** y **flexibilidad** en el desarrollo de estilos CSS. A continuación, se detalla cómo se organiza la información utilizando la arquitectura 7-1.
+
+## Arquitectura 7-1
+
+La arquitectura 7-1 es una estructura moderna de carpetas para organizar los archivos SCSS de manera eficiente y escalable. Esta estructura se basa en dividir los estilos en diferentes directorios según su propósito.
+
+### Estructura de Carpetas
+
+- **abstracts**: Contiene funciones, mixins, y variables.
+- **base**: Reglas iniciales como reset y tipografía.
+- **components**: Estilos para componentes específicos como botones y sliders.
+- **layout**: Estilos para la estructura global como header y footer.
+- **pages**: Estilos específicos de cada página.
+- **themes**: Temas alternativos de estilo.
+- **vendors**: Librerías de terceros.
+- **utilities**: Clases utilitarias y helpers.
+
+### Ejemplo de Organización
+
 # SCSS
 
 - **Modularidad y Mantenimiento**: Facilita la organización con variables y archivos parciales, manteniendo el código limpio y escalable.
@@ -9,39 +30,4 @@
 
 SCSS mejora la **productividad**, **mantenibilidad** y **flexibilidad** en el desarrollo de estilos CSS, siendo una herramienta esencial para el frontend moderno.
 
-# Arquitectura Sass
-
-## 1. Componentización y Escalabilidad
-
-- **Principio**: Estilos divididos en componentes reutilizables y desacoplados.
-- **Organización en archivos**: Cada componente tiene su propio archivo parcial en `components/`.
-
-## 2. Estructura 7-1
-
-Basado en la guía de [Technoph1le](https://dev.to/technoph1le/a-modern-sass-folder-structure-330f), una estructura moderna de carpetas Sass puede incluir:
-
-- **abstracts**: Contiene funciones, mixins, y variables.
-- **base**: Reglas iniciales como reset y tipografía.
-- **components**: Estilos para componentes específicos como botones y sliders.
-- **layout**: Estilos para la estructura global como header y footer.
-- **pages**: Estilos específicos de cada página.
-- **themes**: Temas alternativos de estilo.
-- **vendors**: Librerías de terceros.
-- **utilities**: Clases utilitarias y helpers.
-
-Esta estructura permite una mejor organización y escalabilidad en proyectos grandes.
-
-### Uso de @use y @forward
-
-En lugar de usar el método `@import` que ahora está obsoleto, se recomienda usar `@use` y `@forward` para importar archivos y carpetas en Sass.
-
-## 3. Breakpoints Responsivos
-
-- **Principio**: Nombres de breakpoints descriptivos (ej. `medium`, `large`) en lugar de depender del dispositivo.
-- **Uso de mixins**: Simplifica aplicar breakpoints.
-
-## 4. "Shame" Styles
-
-- **Archivo `_shame.scss`**: Contiene estilos temporales o soluciones rápidas.
-
-Para más detalles, consulta la [guía de Sass](https://sass-guidelin.es/#architecture).
+[Mas iformacion: Sass Guidelines](https://sass-guidelin.es/#too-long-didnt-read)
