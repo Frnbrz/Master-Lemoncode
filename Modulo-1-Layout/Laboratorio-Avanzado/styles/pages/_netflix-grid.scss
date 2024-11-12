@@ -70,34 +70,36 @@
 
 /// Comedy and Drama sections mixin
 
-@mixin flex-container {
-  display: flex;
-  flex-wrap: wrap; // Permite que los elementos se envuelvan
+@mixin grid-container {
+  display: grid;
   gap: 0.3rem;
-  justify-content: center; // Centra las filas
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  margin-inline: auto;
+  justify-content: center;
+
+  @include respond-to('small') {
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  }
+
+  @include respond-to('medium') {
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  }
+
+  @include respond-to('large') {
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  }
 
   &__item {
-    flex: 1 1 $img-top-size; // Tamaño base de 225px, pero los elementos pueden crecer
-    max-width: 100%; // Permite que los elementos usen todo el espacio disponible si están solos en la fila
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: fit-content;
   }
 
   &__item > img {
-    width: 100%; // La imagen ocupa todo el ancho del contenedor
     height: auto;
     object-fit: cover;
 
     &:hover {
-      position: relative;
-      z-index: 1;
-      transform: scale(1.2);
-      animation: grow 0.3s ease-in-out;
-    }
-
-    &:not(:hover) {
-      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+      transform: scale(1.1);
     }
   }
 }
@@ -105,9 +107,9 @@
 /// COMEDY and DRAMA sections
 
 .first {
-  @include flex-container;
+  @include grid-container;
 }
 
 .second {
-  @include flex-container;
+  @include grid-container;
 }
