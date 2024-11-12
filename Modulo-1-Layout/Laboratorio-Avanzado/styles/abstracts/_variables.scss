@@ -51,3 +51,23 @@ $body-line-height: 1.5 !default;
 /// IMAGES WIDTHS
 $img-top-size: 225px;
 $img-item-size: 250px;
+
+
+// Buttons
+
+$button-font-family: 'Jost', sans-serif;
+$button-font-size: 1rem;
+$button-text-transform: capitalize;
+$button-font-weight: 400;
+$button-padding: 1.3rem 1rem;
+$button-border: none;
+$button-border-radius: 0.2rem;
+
+$button-primary-background: #141414;
+$button-primary-color: #f0f0f0;
+$button-primary-background-hover: #f0f0f0;
+$button-primary-color-hover: #200960;
+$button-accent-background: #f0f0f0;
+$button-accent-color: #141414;
+$button-accent-background-hover: #f0f0f0;
+$button-accent-color-hover: #ff0a16;

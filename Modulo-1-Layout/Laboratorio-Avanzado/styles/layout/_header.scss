@@ -1,16 +1,15 @@
-@use "../abstracts/" as *;
+// variables en archivo _variables.scss
+@use '../abstracts/' as *;
 
 .header {
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem;
-  // cabecera siempre visible
   background-color: $body-background-color;
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
-
 
   &__logo {
     display: flex;
@@ -24,23 +23,33 @@
     flex-direction: row;
     align-items: center;
     gap: 2rem;
+
+    @include respond-to('small') {
+      gap: 0.5rem;
+    }
+
+    @include respond-to('medium') {
+      gap: 1rem;
+    }
+
+    @include respond-to('large') {
+      gap: 2rem;
+    }
   }
 
   &__title {
     font-size: 1.5rem;
-  }
 
-  &__button {
-    border: none;
-    border-radius: 0.2rem;
-    font: inherit;
-    cursor: pointer;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
+    @include respond-to('small') {
+      display: none;
+    }
 
-    &:hover {
-      background-color: $button-hover-color;
-      color: $button-hover-text;
+    @include respond-to('medium') {
+      display: none;
+    }
+
+    @include respond-to('large') {
+      display: block;
     }
   }
 }

@@ -1,6 +1,6 @@
-@use "sass:map";
-@use "sass:meta";
-@use "variables" as *;
+@use 'sass:map';
+@use 'sass:meta';
+@use 'variables' as *;
 
 /// Responsive breakpoint manager
 /// @access public
@@ -10,17 +10,17 @@
   $raw-query: map.get($breakpoints, $breakpoint);
 
   @if $raw-query {
-    $query: if(type-of($raw-query)=='string',
-        unquote($raw-query),
-        inspect($raw-query));
+    $query: if(
+      meta.type-of($raw-query) == 'string',
+      unquote($raw-query),
+      meta.inspect($raw-query)
+    );
 
     @media #{$query} {
       @content;
     }
-  }
-
-  @else {
+  } @else {
     @error 'No value found for `#{$breakpoint}`. '
-    +'Please make sure it is defined in `$breakpoints` map.';
+    + 'Please make sure it is defined in `$breakpoints` map.';
   }
 }
