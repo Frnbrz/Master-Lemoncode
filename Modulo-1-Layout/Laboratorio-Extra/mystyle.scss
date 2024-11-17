@@ -78,7 +78,7 @@ body {
 
 .container {
   display: grid;
-  height: 100vh;
+  max-width: 100%;
   grid-template-columns: 200px 1fr;
   grid-template-rows: 100px auto 50px;
   grid-template-areas:
@@ -90,7 +90,7 @@ body {
 
   @media only screen and (max-width: 768px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 100px auto auto 50px;
+    grid-template-rows: 100px 60px auto 50px;
     grid-template-areas:
       'header'
       'navbar'
