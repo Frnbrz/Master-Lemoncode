@@ -1,4 +1,4 @@
-@use "sass:map" as *;
+@use 'sass:map' as *;
 
 body {
   margin: 0;
@@ -8,28 +8,11 @@ body {
 
 // Ejercicio 3
 
-
-
-// <header>
-//       <h1>Header</h1>
-//       <nav>
-//         <ul>
-//           <li><a href="#">Home</a></li>
-//           <li><a href="#">Blog</a></li>
-//           <li><a href="#" aria-current="page">Activities</a></li>
-//           <li><a href="#">About me</a></li>
-//         </ul>
-//       </nav>
-//     </header>
-
-
-
 body {
   margin: 0;
   margin: 0 auto;
   max-width: 80rem;
   font-family: 'Roboto', sans-serif;
-
 }
 
 h1 {
@@ -40,9 +23,6 @@ h1 {
 header {
   background-color: #188a9c;
 
-
-
-
   nav {
     ul {
       display: flex;
@@ -52,18 +32,15 @@ header {
       padding: 0rem 2rem;
       gap: 7rem;
 
-
       @media screen and (max-width: 768px) {
         flex-direction: column;
         gap: 1rem;
         padding: 0px;
       }
 
-
       li {
         height: 3rem;
         width: 100%;
-
 
         a {
           color: #fff;
@@ -74,15 +51,11 @@ header {
           justify-content: center;
           align-items: center;
 
-
-          &[aria-current='page'] {
+          &:hover {
             background-color: #0c383e;
-            ;
           }
         }
-
       }
-
     }
   }
 }

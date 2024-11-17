@@ -1,3 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  // outline: 1px solid lime;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -5,34 +17,14 @@ body {
 
 // Ejercicio 5
 
-
-// <div class="card">
-//       <header>
-//         <img src="https://placehold.co/600x400" alt="" />
-//       </header>
-//       <h1>Title</h1>
-//       <p>
-//         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat
-//         numquam, suscipit sint aspernatur, laboriosam consequuntur saepe
-//         recusandae necessitatibus eaque ea dolore iure voluptas modi quidem,
-//         amet nostrum.
-//       </p>
-//       <footer>
-//         <div><span>Publised:</span><time>March 20, 2020</time></div>
-//         <button>More info</button>
-//       </footer>
-//     </div>
-
 body {
   font-family: Arial, sans-serif;
-
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #d3d3d3;
   height: 100vh;
 }
-
 
 .card {
   border: 1px solid #000;
@@ -41,6 +33,9 @@ body {
   width: 300px;
 
   header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
       width: 100%;
     }
@@ -55,6 +50,7 @@ body {
   p {
     font-size: 1rem;
     padding: 0.5rem;
+    margin: 0;
   }
 
   footer {
@@ -68,8 +64,6 @@ body {
       justify-content: flex-end;
       align-items: center;
       gap: 0.5rem;
-
-
 
       span {
         font-weight: bold;
@@ -90,6 +84,4 @@ body {
       cursor: pointer;
     }
   }
-
-
 }

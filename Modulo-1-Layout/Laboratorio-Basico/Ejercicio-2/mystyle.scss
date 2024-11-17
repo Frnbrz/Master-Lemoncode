@@ -1,15 +1,9 @@
-//* Tema A: theme1 
+//* Tema A: theme1
 //* Tema B: theme2
 
-
-// @use 'themes/theme1';
-@use 'themes/theme2';
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
+// @use 'themes/theme1' as *;
+@use 'themes/theme2' as *;
+@use 'sass:map';
 // Ejercicio 2
 
 .container {
@@ -22,25 +16,28 @@ body {
 }
 
 .theme__base {
-  @extend .base;
+  @extend .box;
+  background-color: map.get($colors, base);
 }
 
 .theme__important {
-  @extend .important;
+  @extend .box;
+  background-color: map.get($colors, important);
 }
 
 .theme__warning {
-  @extend .warning;
+  @extend .box;
+  background-color: map.get($colors, warning);
 }
 
 .font--principal {
-  @extend .principal;
+  font-family: map.get($fonts, principal);
 }
 
 .font--secondary {
-  @extend .secondary;
+  font-family: map.get($fonts, secondary);
 }
 
 .box--shadow {
-  @extend .box-shadow;
+  font-family: map.get($fonts, secondary);
 }

@@ -1,4 +1,9 @@
-@use "sass:map" as *;
+@use 'sass:map' as *;
+
+body {
+  margin: 0;
+  padding: 0;
+}
 
 $colors: (
   base: #00f,
@@ -18,33 +23,4 @@ $fonts: (
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.base {
-  @extend .box;
-  background-color: get($colors, base);
-}
-
-.important {
-  @extend .box;
-  background-color: get($colors, important);
-}
-
-.warning {
-  @extend .box;
-  background-color: get($colors, warning);
-}
-
-.principal {
-  font-family: get($fonts, principal);
-}
-
-.secondary {
-  font-family: get($fonts, secondary);
-}
-
-.box-shadow {
-  @extend .box;
-  border: 1px solid #000;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
