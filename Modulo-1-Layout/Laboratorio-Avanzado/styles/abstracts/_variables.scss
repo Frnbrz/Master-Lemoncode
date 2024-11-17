@@ -1,12 +1,16 @@
 // Breakpoint
 
 $breakpoints: (
-  'small': (min-width: 320px),
-  'medium': (min-width: 768px),
-  'large': (min-width: 1280px),
+  'small': (
+    min-width: 320px,
+  ),
+  'medium': (
+    min-width: 868px,
+  ),
+  'large': (
+    min-width: 1200px,
+  ),
 );
-
-
 
 // Colors
 
@@ -28,12 +32,10 @@ $link-color: #f4f4f4 !default;
 // @type Color
 $link-color-hover: #171818a8 !default;
 
-
 //Typography
 
 // Import the fonts
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
-
 
 /// @type List
 $body-font-family: 'Jost', sans-serif !default;
@@ -47,11 +49,9 @@ $body-font-size: 16px !default;
 /// @type Number
 $body-line-height: 1.5 !default;
 
-
 /// IMAGES WIDTHS
 $img-top-size: 225px;
 $img-item-size: 250px;
-
 
 // Buttons
 

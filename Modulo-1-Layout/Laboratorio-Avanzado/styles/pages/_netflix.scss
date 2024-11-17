@@ -72,31 +72,40 @@
 
 @mixin flex-container {
   display: flex;
-  flex-wrap: wrap; // Permite que los elementos se envuelvan
   gap: 0.3rem;
-  justify-content: center; // Centra las filas
+  justify-content: center;
+  overflow: clip;
+
+  @include respond-to('small') {
+    flex-wrap: wrap;
+  }
+
+  @include respond-to('medium') {
+    flex-wrap: wrap;
+  }
+
+  @include respond-to('large') {
+    flex-wrap: nowrap;
+  }
 
   &__item {
-    flex: 1 1 $img-top-size; // Tamaño base de 225px, pero los elementos pueden crecer
-    max-width: 100%; // Permite que los elementos usen todo el espacio disponible si están solos en la fila
+    flex: 1 1 $img-top-size;
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  &__item > img {
-    width: 100%; // La imagen ocupa todo el ancho del contenedor
-    height: auto;
-    object-fit: cover;
-
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, z-index 0.3s ease;
     &:hover {
-      position: relative;
+      transform: scale(1.1);
       z-index: 1;
-      transform: scale(1.2);
-      animation: grow 0.3s ease-in-out;
     }
 
-    &:not(:hover) {
+    & > img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
       transition: transform 0.3s ease-in-out;
     }
   }
