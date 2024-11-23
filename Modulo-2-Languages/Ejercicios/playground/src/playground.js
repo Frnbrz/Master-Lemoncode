@@ -1,17 +1,30 @@
-function values (obj) {
-  return Object.values(obj)
+// Descifra el siguiente secreto:
+var secret =
+  "': rg!qg yq,urae: ghsrf wuran shrerg jq,u'qf ra r' ,qaq' er g'q,o rg,fuwurae: m!hfua( t'usqfuq ,:apu(:m xv"
+
+// Sabiendo que el alfabeto original ha sufrido la siguiente transformación:
+var plain = "abcdefghijklmnopqrstuvwxyz:()!¡,'"
+var cipher = "qw,ert(yuio'pa:sdfg!hjklz¡xcv)bnm"
+
+function decrypt (secret) {
+  // replace cipher with plain " " are the same 
+  var decrypted = ""
+
+  for (var i = 0; i < secret.length; i++) {
+    if (secret[i] === " ") {
+      decrypted += " "
+    } else {
+      for (var j = 0; j < cipher.length; j++) {
+        if (secret[i] === cipher[j]) {
+          decrypted += plain[j]
+        }
+      }
+    }
+  }
+
+
+  return decrypted
 }
 
 
-console.log(values({ id: 31, duration: 310, name: "long video", format: "mp4" })) // [31, 310, "long video", "mp4"]
-
-function Person (name) {
-  this.name = name
-}
-
-Person.prototype.walk = function () {
-  console.log("I'm walking")
-}
-
-var john = new Person("John")
-console.log(values(john))
+console.log(decrypt(secret))
