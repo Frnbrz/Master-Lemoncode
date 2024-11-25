@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .button {
   display: inline-flex;
@@ -15,7 +15,7 @@
   border-radius: $button-border-radius;
   transition: 275ms ease;
 
-  &[data-type="primary"] {
+  &[data-type='primary'] {
     background-color: $button-primary-background;
     color: $button-primary-color;
 
@@ -25,7 +25,7 @@
     }
   }
 
-  &[data-type="accent"] {
+  &[data-type='accent'] {
     background-color: $button-accent-background;
     color: $button-accent-color;
 
@@ -35,7 +35,6 @@
     }
   }
 }
-
 
 //  &__button {
 //     border: none;

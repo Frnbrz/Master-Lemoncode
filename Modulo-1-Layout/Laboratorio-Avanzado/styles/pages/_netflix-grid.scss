@@ -1,115 +1,115 @@
-@use '../abstracts/' as *;
+@use "../abstracts/" as *;
 
 .section {
-  &__top {
-    display: flex;
-    overflow: hidden;
-    flex-wrap: wrap;
-    place-content: center;
-    gap: 1rem;
+	&__top {
+		display: flex;
+		overflow: hidden;
+		flex-wrap: wrap;
+		place-content: center;
+		gap: 1rem;
 
-    flex-direction: column;
+		flex-direction: column;
 
-    & > div:nth-last-child(-n + 2) {
-      display: none;
-    }
+		& > div:nth-last-child(-n + 2) {
+			display: none;
+		}
 
-    @include respond-to('small') {
-      flex-direction: column;
+		@include respond-to("small") {
+			flex-direction: column;
 
-      & > div:nth-last-child(-n + 2) {
-        display: none;
-      }
-    }
+			& > div:nth-last-child(-n + 2) {
+				display: none;
+			}
+		}
 
-    @include respond-to('medium') {
-      flex-direction: row;
+		@include respond-to("medium") {
+			flex-direction: row;
 
-      & > div:nth-last-child(-n + 2) {
-        display: none;
-      }
-    }
+			& > div:nth-last-child(-n + 2) {
+				display: none;
+			}
+		}
 
-    @include respond-to('large') {
-      flex-direction: row;
+		@include respond-to("large") {
+			flex-direction: row;
 
-      & > div:nth-last-child(-n + 2) {
-        display: block;
-      }
-    }
-  }
+			& > div:nth-last-child(-n + 2) {
+				display: block;
+			}
+		}
+	}
 
-  &__text::after {
-    content: '3';
+	&__text::after {
+		content: "3";
 
-    @include respond-to('small') {
-      content: '3';
-    }
+		@include respond-to("small") {
+			content: "3";
+		}
 
-    @include respond-to('medium') {
-      content: '3';
-    }
+		@include respond-to("medium") {
+			content: "3";
+		}
 
-    @include respond-to('large') {
-      content: '5';
-    }
-  }
+		@include respond-to("large") {
+			content: "5";
+		}
+	}
 
-  &__item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-    & > img {
-      width: $img-top-size;
-      height: auto;
-      object-fit: cover;
-    }
-  }
+		& > img {
+			width: $img-top-size;
+			height: auto;
+			object-fit: cover;
+		}
+	}
 }
 
 /// Comedy and Drama sections mixin
 
 @mixin grid-container {
-  display: grid;
-  gap: 0.3rem;
-  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-  margin-inline: auto;
-  justify-content: center;
+	display: grid;
+	gap: 0.3rem;
+	grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+	margin-inline: auto;
+	justify-content: center;
 
-  @include respond-to('small') {
-    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-  }
+	@include respond-to("small") {
+		grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+	}
 
-  @include respond-to('medium') {
-    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-  }
+	@include respond-to("medium") {
+		grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+	}
 
-  @include respond-to('large') {
-    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-  }
+	@include respond-to("large") {
+		grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+	}
 
-  &__item {
-    width: fit-content;
-  }
+	&__item {
+		width: fit-content;
+	}
 
-  &__item > img {
-    height: auto;
-    object-fit: cover;
+	&__item > img {
+		height: auto;
+		object-fit: cover;
 
-    &:hover {
-      cursor: pointer;
-      transform: scale(1.1);
-    }
-  }
+		&:hover {
+			cursor: pointer;
+			transform: scale(1.1);
+		}
+	}
 }
 
 /// COMEDY and DRAMA sections
 
 .first {
-  @include grid-container;
+	@include grid-container;
 }
 
 .second {
-  @include grid-container;
+	@include grid-container;
 }
