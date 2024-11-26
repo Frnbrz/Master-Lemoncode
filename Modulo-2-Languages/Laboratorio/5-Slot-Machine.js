@@ -19,13 +19,13 @@ class SlotMachine {
 
 	play() {
 		this.coins++
-		const coinFlips = [
+		const roulettesSpin = [
 			Math.random() >= 0.5,
 			Math.random() >= 0.5,
 			Math.random() >= 0.5,
 		] // Genera 3 booleanos aleatorios
 
-		if (coinFlips.every(reel => reel)) {
+		if (roulettesSpin.every(reel => reel)) {
 			// Si los 3 booleanos son true devuelve true
 			console.log(`Congratulations!!!. You won ${this.coins} coins!!`)
 			// reset the coins
