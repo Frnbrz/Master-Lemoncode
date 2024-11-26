@@ -22,3 +22,5 @@ merge(a, b) // {name: "Maria", age: 31, married: true, surname: "Ibañez", count
 function merge(source, target) {
 	return { ...target, ...source } // Devuelve un nuevo objeto con todas las propiedades de target y de source, y en caso de propiedades con el mismo nombre, source sobreescribe a target
 }
+
+console.log(merge(a, b)) // {name: "Maria", age: 31, married: true, surname: "Ibañez", country: "SPA"}
