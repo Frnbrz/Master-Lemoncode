@@ -1,8 +1,8 @@
-function clone (source) {
+function clone(source) {
   return { ...source }
 }
 
-function merge (source, target) {
+function merge(source, target) {
   return { ...source, ...target }
 }
 

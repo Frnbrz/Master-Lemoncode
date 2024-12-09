@@ -1,10 +1,10 @@
-function printAverage (classResults) {
+function printAverage(classResults) {
   const notaAlumnos = calculateMedia(classResults)
 
   return mediaNumberToString(notaAlumnos)
 }
 
-function calculateMedia (notasAlumnos) {
+function calculateMedia(notasAlumnos) {
 
   let eso2oParsedToArray = Object.entries(notasAlumnos)
   let totalNota = 0
@@ -16,7 +16,7 @@ function calculateMedia (notasAlumnos) {
 
 }
 
-function mediaNumberToString (notaMedia) {
+function mediaNumberToString(notaMedia) {
   if (notaMedia === 10) return 'Matrícula de Honor'
 
   if (notaMedia >= 9) return 'Sobresaliente'

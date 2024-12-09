@@ -1,4 +1,4 @@
-function f (input) {
+function f(input) {
   if (input === undefined) return result = "Unknown"
   if (input === null) return result = ""
   return input

@@ -1,4 +1,4 @@
-function biggestWord (phrase) {
+function biggestWord(phrase) {
 
   let spliedPhrase = phrase.split(' ')
 
