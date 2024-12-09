@@ -13,7 +13,7 @@ const concat3 = (...arrays) => [].concat(...arrays)
 
 // Ejemplo de uso:
 const a = [1, 2, 3, 4]
-const b = ["a", "b", "c", "d"]
+const b = ['a', 'b', 'c', 'd']
 
 console.log(concat(a, b)) // [1, 2, 3, 4, "a", "b", "c", "d"]
 

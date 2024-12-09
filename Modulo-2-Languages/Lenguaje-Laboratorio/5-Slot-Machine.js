@@ -12,29 +12,25 @@
 
 // Ejemplo de uso
 class SlotMachine {
-	constructor() {
-		// Inicializa el contador de monedas
-		this.coins = 0
-	}
+  constructor() {
+    // Inicializa el contador de monedas
+    this.coins = 0
+  }
 
-	play() {
-		this.coins++
-		const roulettesSpin = [
-			Math.random() >= 0.5,
-			Math.random() >= 0.5,
-			Math.random() >= 0.5,
-		] // Genera 3 booleanos aleatorios
+  play() {
+    this.coins++
+    const roulettesSpin = [Math.random() >= 0.5, Math.random() >= 0.5, Math.random() >= 0.5] // Genera 3 booleanos aleatorios
 
-		if (roulettesSpin.every(reel => reel)) {
-			// Si los 3 booleanos son true devuelve true
-			console.log(`Congratulations!!!. You won ${this.coins} coins!!`)
-			// reset the coins
-			this.coins = 0
-		} else {
-			// Si no, devuelve false
-			console.log("Good luck next time!!")
-		}
-	}
+    if (roulettesSpin.every((reel) => reel)) {
+      // Si los 3 booleanos son true devuelve true
+      console.log(`Congratulations!!!. You won ${this.coins} coins!!`)
+      // reset the coins
+      this.coins = 0
+    } else {
+      // Si no, devuelve false
+      console.log('Good luck next time!!')
+    }
+  }
 }
 
 const machine1 = new SlotMachine()
