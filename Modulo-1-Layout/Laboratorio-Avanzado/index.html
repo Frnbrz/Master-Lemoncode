@@ -1,64 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="stylesheet" href="styles/main.scss" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-	</head>
-	<body>
-		<header class="header">
-			<div class="header__logo">
-				<img src="assets/logo.png" />
-				<div class="header__title">Warner Live</div>
-			</div>
-			<div class="header__buttons">
-				<a href="#" class="button" data-type="primary">Inicio</a>
-				<a href="#" class="button" data-type="primary">Buscar</a>
-			</div>
-		</header>
-		<main>
-			<div class="section">
-				Los <span class="section__text"></span> más populares hoy
-			</div>
-			<section class="section__top">
-				<div class="section__item"><img src="assets/top/1.jpg" /></div>
-				<div class="section__item"><img src="assets/top/2.jpg" /></div>
-				<div class="section__item"><img src="assets/top/3.jpg" /></div>
-				<div class="section__item"><img src="assets/top/4.jpg" /></div>
-				<div class="section__item"><img src="assets/top/5.jpg" /></div>
-			</section>
-			<div class="section-title">Comedias</div>
-			<section class="first">
-				<div class="first__item"><img src="assets/line-2/1.jpg" /></div>
-				<div class="first__item"><img src="assets/line-2/2.jpg" /></div>
-				<div class="first__item"><img src="assets/line-2/3.jpg" /></div>
-				<div class="first__item"><img src="assets/line-2/4.jpg" /></div>
-				<div class="first__item"><img src="assets/line-2/5.jpg" /></div>
-				<div class="first__item"><img src="assets/line-2/6.jpg" /></div>
-			</section>
-			<div class="section-title">Dramas basados en libros</div>
-			<section class="second">
-				<div class="second__item"><img src="assets/line-1/1.jpg" /></div>
-				<div class="second__item"><img src="assets/line-1/2.jpg" /></div>
-				<div class="second__item"><img src="assets/line-1/3.jpg" /></div>
-				<div class="second__item"><img src="assets/line-1/4.jpg" /></div>
-				<div class="second__item"><img src="assets/line-1/5.jpg" /></div>
-				<div class="second__item"><img src="assets/line-1/6.jpg" /></div>
-			</section>
-		</main>
-		<footer></footer>
 
-		<script>
-			document.addEventListener("DOMContentLoaded", function () {
-				const sectionTopItems = document.querySelectorAll(
-					".section__top .section__item",
-				).length
-				document.documentElement.style.setProperty(
-					"--section-item-count",
-					sectionTopItems,
-				)
-			})
-		</script>
-	</body>
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="styles/main.scss" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+</head>
+
+<body>
+	<header class="header">
+		<div class="header__logo">
+			<img src="assets/logo.png" />
+			<div class="header__title">Warner Live</div>
+		</div>
+		<div class="header__buttons">
+			<a href="#" class="button" data-type="primary">Inicio</a>
+			<a href="#" class="button" data-type="primary">Buscar</a>
+		</div>
+	</header>
+	<main>
+		<div class="section">
+			Los <span class="section__text"></span> más populares hoy
+		</div>
+		<section class="section__top">
+			<div class="section__item"><img src="assets/top/1.jpg" /></div>
+			<div class="section__item"><img src="assets/top/2.jpg" /></div>
+			<div class="section__item"><img src="assets/top/3.jpg" /></div>
+			<div class="section__item"><img src="assets/top/4.jpg" /></div>
+			<div class="section__item"><img src="assets/top/5.jpg" /></div>
+		</section>
+		<div class="section-title">Comedias</div>
+		<section class="first">
+			<div class="first__item"><img src="assets/line-2/1.jpg" /></div>
+			<div class="first__item"><img src="assets/line-2/2.jpg" /></div>
+			<div class="first__item"><img src="assets/line-2/3.jpg" /></div>
+			<div class="first__item"><img src="assets/line-2/4.jpg" /></div>
+			<div class="first__item"><img src="assets/line-2/5.jpg" /></div>
+			<div class="first__item"><img src="assets/line-2/6.jpg" /></div>
+		</section>
+		<div class="section-title">Dramas basados en libros</div>
+		<section class="second">
+			<div class="second__item"><img src="assets/line-1/1.jpg" /></div>
+			<div class="second__item"><img src="assets/line-1/2.jpg" /></div>
+			<div class="second__item"><img src="assets/line-1/3.jpg" /></div>
+			<div class="second__item"><img src="assets/line-1/4.jpg" /></div>
+			<div class="second__item"><img src="assets/line-1/5.jpg" /></div>
+			<div class="second__item"><img src="assets/line-1/6.jpg" /></div>
+		</section>
+	</main>
+	<footer></footer>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const sectionTopItems = document.querySelectorAll(
+				".section__top .section__item",
+			).length
+			document.documentElement.style.setProperty(
+				"--section-item-count",
+				sectionTopItems,
+			)
+		})
+	</script>
+</body>
+
 </html>
