@@ -36,3 +36,20 @@ Express es un framework de Node.js que te permite crear aplicaciones web y APIs 
 
 ### Desventajas de Express
 
+### Routing
+
+El enrutamiento en Express es la forma en que tu aplicación responde a las solicitudes HTTP. Puedes definir rutas para diferentes URL y métodos HTTP, y Express se encargará de enrutar las solicitudes a la función correspondiente.
+
+```javascript
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+```
+
