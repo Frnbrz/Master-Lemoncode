@@ -61,7 +61,7 @@ JavaScript includes several data types categorized into primitive and object typ
   - `Function`: Callable objects for performing actions.
 
 ## References
-// ...existing code...
+
 
 ## Objects
 // ...existing code...
