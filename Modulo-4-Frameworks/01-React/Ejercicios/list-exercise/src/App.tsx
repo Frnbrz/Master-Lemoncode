@@ -1,4 +1,3 @@
-import './App.css'
 import MemberTable from './components/MemberTable.tsx'
 
 function App() {
