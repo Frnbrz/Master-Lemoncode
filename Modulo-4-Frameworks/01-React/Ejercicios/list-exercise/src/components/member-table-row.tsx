@@ -16,6 +16,9 @@ export const MemberTableRow: React.FC<Props> = (props) => {
       <a href={member.html_url} aria-label={`Github profile link for ${member.login}`} target="_blank" rel="noreferrer">
         {member.html_url}
       </a>
+      <a href={member.html_url} aria-label={`Github profile link for ${member.login}`} target="_blank" rel="noreferrer">
+        {member.html_url}
+      </a>
     </React.Fragment>
   )
 }
