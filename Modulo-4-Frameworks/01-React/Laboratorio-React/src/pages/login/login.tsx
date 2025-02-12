@@ -8,18 +8,15 @@ const LoginPage: React.FC = () => {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const { login } = useAuth()
-  const location = useLocation()
 
 
 
-  async function handleLogin(location) {
-    console.log(location.pathname)
-    const { pathname } = location.pathname
+  async function handleLogin() {
 
 
-    console.log(pathname)
+
     const user: User = { user: "admin" }
-    navigate(pathname)
+    navigate("/list")
     login(user);
   }
 
@@ -27,7 +24,7 @@ const LoginPage: React.FC = () => {
     e.preventDefault();
 
     if (username === "admin" && password === "test") {
-      handleLogin(location)
+      handleLogin()
     } else {
       alert("User / password not valid, psst... admin / test");
     }
