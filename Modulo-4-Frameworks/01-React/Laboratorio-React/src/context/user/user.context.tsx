@@ -1,42 +1,44 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { User, createEmptyUserProfile } from './user.type';
+import React, { createContext, useContext, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-
-
-interface AuthContextProps {
-  user: User | null;
-  login: (user: User) => void;
+interface AuthContextType {
+  user: string | null;
+  login: (data: string) => void;
   logout: () => void;
 }
 
-const AuthContext = createContext<AuthContextProps>({
-  user: createEmptyUserProfile(),
-  login: () => { },
+
+const AuthContext = createContext<AuthContextType>({
+  user: null,
+  login: (data: any) => { },
   logout: () => { },
 });
 
-export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(null);
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState<string>();
+  const navigate = useNavigate();
 
-  const login = (user: User) => {
-    setUser(user);
+  const login = async (data: string) => {
+    setUser(data);
+    navigate("/list");
   };
 
   const logout = () => {
     setUser(null);
+    navigate("/", { replace: true });
   };
 
-  return (
-    <AuthContext.Provider value={{ user, login, logout }}>
-      {children}
-    </AuthContext.Provider>
+  const value = useMemo(
+    () => ({
+      user,
+      login,
+      logout,
+    }),
+    [user]
   );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
-export const useAuth = (): AuthContextProps => {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
+export const useAuth = () => {
+  return useContext(AuthContext);
 };
