@@ -1,32 +1,20 @@
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/user/user.context";
-import { User } from "../../context/user/user.type";
 
 const LoginPage: React.FC = () => {
-  const navigate = useNavigate();
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [error, setError] = React.useState(false)
   const { login } = useAuth()
-
-
-
-  async function handleLogin() {
-
-
-
-    const user: User = { user: "admin" }
-    navigate("/list")
-    login(user);
-  }
 
   const handleNavigation = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (username === "admin" && password === "test") {
-      handleLogin()
+      const user = "admin"
+      login(user);
     } else {
-      alert("User / password not valid, psst... admin / test");
+      setError(true)
     }
   };
 
@@ -49,6 +37,12 @@ const LoginPage: React.FC = () => {
         </label>
         <button type="submit" className="btn btn">Login</button>
       </form>
+      {
+        error ? (<div className="msg">
+          <strong>Error login! </strong>
+          secret: admin / test
+        </div>) : null
+      }
     </>
   );
 };
