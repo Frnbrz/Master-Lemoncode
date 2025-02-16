@@ -1,23 +1,14 @@
 import React from "react";
-import { Navigate, Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from "../context/user/user.context";
-import LoginPage from "../pages/login/login";
 
-interface Props {
-  privateValidation: boolean
-}
 
-export const AuthGuard = ({ privateValidation }: Props) => {
+
+export const AuthGuard = () => {
   const userState = useAuth();
-  return userState.user ? (
-    privateValidation ? (
-      <Outlet />
-    ) : (
-      <Navigate replace to="/list" />
-    )
-  ) : (
-    <LoginPage />
-  );
+  return userState.user === undefined ?
+    <Navigate to="/" replace />
+    : <Outlet />;
 }
 
 export default AuthGuard
