@@ -6,7 +6,9 @@ const DetailPage: React.FC = () => {
 
   return (
     <>
-      <h2>Hello from Detail page</h2>
+      <header>
+        <h2>Hello from Detail page</h2>
+      </header>
       <h3>User Id: {id}</h3>
       <Link to="/list">Back to list page</Link>
     </>
