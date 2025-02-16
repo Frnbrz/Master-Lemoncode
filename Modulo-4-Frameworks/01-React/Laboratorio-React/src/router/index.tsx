@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
 import PublicRoutes from './public-routes';
 import PrivateRoutes from './private-routes';
+import { AuthProvider } from '../context/user/user.context';
 
 const AppRouter: React.FC = () => {
   const routes = useRoutes([PublicRoutes, PrivateRoutes]);
@@ -11,7 +12,9 @@ const AppRouter: React.FC = () => {
 const AppRoutes: React.FC = () => {
   return (
     <Router>
-      <AppRouter />
+      <AuthProvider>
+        <AppRouter />
+      </AuthProvider>
     </Router>
   );
 };
