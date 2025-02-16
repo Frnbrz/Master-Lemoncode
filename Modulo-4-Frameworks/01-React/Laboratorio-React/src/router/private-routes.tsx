@@ -7,7 +7,7 @@ const DetailPage = lazy(() => import("../pages/detail/detail"));
 
 const PrivateRoutes = {
   path: "/",
-  element: <AuthGuard privateValidation={true} />,
+  element: <AuthGuard />,
   children: [
     {
       path: PrivateRoutesTypes.LIST,
@@ -25,6 +25,10 @@ const PrivateRoutes = {
         </Suspense>
       ),
     },
+    {
+      path: "*",
+      element: <div>Not found</div>,
+    }
   ],
 };
 
