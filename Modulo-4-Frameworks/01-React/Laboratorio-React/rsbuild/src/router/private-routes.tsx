@@ -1,15 +1,21 @@
 import React, { lazy, Suspense } from "react";
 import { AuthGuard } from "./router.guard";
 import { PrivateRoutesTypes } from "./router.types";
+import { useAuth } from "src/context/user/user.context";
 
 const ListPage = lazy(() => import("../pages/list/list"));
 const DetailPage = lazy(() => import("../pages/detail/detail"));
-
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { logout, user } = useAuth()
+  const handleLogout = () => {
+    logout()
+  }
+
   return (
     <div>
       <header>
-        <h1>hola</h1>
+        <h2>Hello {user} from List page</h2>
+        <button className="btn btn-sm" onClick={() => handleLogout()}>logout</button>
       </header>
       {children}</div>
   )
