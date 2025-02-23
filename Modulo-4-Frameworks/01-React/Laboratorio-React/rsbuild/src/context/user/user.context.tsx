@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, PropsWithChildren, useContext, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 interface AuthContextType {
@@ -14,13 +14,11 @@ const AuthContext = createContext<AuthContextType>({
   logout: () => { },
 });
 
-import { ReactNode } from 'react';
 
-interface AuthProviderProps {
-  children: ReactNode;
-}
 
-export const AuthProvider = ({ children }: AuthProviderProps) => {
+
+
+export const AuthProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => {
   const [user, setUser] = useState<string | null>(null);
   const navigate = useNavigate();
 
