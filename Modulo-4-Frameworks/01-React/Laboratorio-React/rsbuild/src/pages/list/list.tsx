@@ -1,27 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MemberItem } from "./components/MemberItem";
+import { fetchMembers } from "../../api/memberAPI"; // Import the new function
+import { MemberEntity } from "src/types/members";
+import MemberFinder from "./components/MemberFinder";
 
-interface MemberEntity {
-  id: string;
-  login: string;
-  avatar_url: string;
-}
 
 const ListPage: React.FC = () => {
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
 
-
   React.useEffect(() => {
-    fetch(`https://api.github.com/orgs/lemoncode/members`)
-      .then((response) => response.json())
-      .then((json) => setMembers(json));
+    fetchMembers('lemoncode').then((json) => setMembers(json));
   }, []);
-
-
 
   return (
     <>
+      <MemberFinder />
       <div className="list-user-list-container">
         <span className="list-header">Avatar</span>
         <span className="list-header">Id</span>
@@ -35,4 +29,4 @@ const ListPage: React.FC = () => {
   );
 };
 
-export default ListPage
+export default ListPage;
