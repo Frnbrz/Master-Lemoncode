@@ -5,7 +5,8 @@ import { useAuth } from "../context/user/user.context";
 
 export const AuthGuard = () => {
   const userState = useAuth();
-  return userState.user === undefined ?
+  console.log(userState)
+  return userState.user === null ?
     <Navigate to="/" replace />
     : <Outlet />;
 }
