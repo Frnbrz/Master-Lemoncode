@@ -1,7 +1,17 @@
 import { createContext, useState, useEffect, PropsWithChildren } from 'react';
 import { MemberEntity } from 'src/types/members';
 
-export const MembersContext = createContext<MemberEntity[]>([]);
+interface MembersContextType {
+  members: MemberEntity[];
+  loading: boolean;
+  error: string | null;
+}
+
+export const MembersContext = createContext<MembersContextType>({
+  members: [],
+  loading: true,
+  error: null,
+});
 
 export const GithubMembersProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => {
   const [members, setMembers] = useState([]);
