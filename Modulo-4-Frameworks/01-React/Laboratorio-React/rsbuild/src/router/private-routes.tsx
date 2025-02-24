@@ -3,6 +3,7 @@ import { AuthGuard } from "./router.guard";
 import { PrivateRoutesTypes } from "./router.types";
 import { useAuth } from "src/context/user/user.context";
 import { useLocation } from "react-router-dom";
+import { MembersProvider } from "src/context/member/member.context";
 
 const ListPage = lazy(() => import("../pages/list/list"));
 const DetailPage = lazy(() => import("../pages/detail/detail"));
@@ -28,9 +29,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 const PrivateRoutes = {
   path: "/",
   element: (
-    <Layout>
-      <AuthGuard />
-    </Layout>
+    <MembersProvider>
+      <Layout>
+        <AuthGuard />
+      </Layout>
+    </MembersProvider>
   ),
   children: [
     {
